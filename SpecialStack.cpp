@@ -31,12 +31,12 @@ void SpecialStack::printStack(){
 void SpecialStack::popOdd(){
       if(!m_stack.empty()){
 
-        vector <int> nums = {0};
+        vector <int> nums ;
         stack<int> temp = m_stack;
         for(int i = 0; i < m_stack.size(); i++){
             if ((temp.top() % 2) != 0){
                 temp.pop();
-                for(int j = i; j > 0; j--){
+                for(int j = i; j >= 0; j--){
                     temp.push(nums.at(j));
                 }
                 m_stack = temp;
@@ -53,12 +53,12 @@ void SpecialStack::popOdd(){
 void SpecialStack::popEven(){
     if(!m_stack.empty()){
 
-        vector <int> nums = {0};
+        vector <int> nums;
         stack<int> temp = m_stack;
         for(int i = 0; i < m_stack.size(); i++){
             if ((temp.top() % 2) == 0){
                 temp.pop();
-                for(int j = i; j > 0; j--){
+                for(int j = i; j >= 0; j--){
                     temp.push(nums.at(j));
                 }
                 m_stack = temp;
